@@ -1,0 +1,49 @@
+<div class="back">
+  <%= link_to 'back', {:action => 'login'}%>
+</div>
+<div class="head">Signup</div>
+<p>
+  <%= @message%>
+</p>
+
+<div class="form">
+  <%= form_tag :action => 'send_signup' do %>
+  <%= text_field 'signup_info', 'name', placeholder: "user name" %>
+
+  <%= password_field 'signup_info', 'password', id:'password', placeholder: "password", :required => true %>
+  <%= password_field 'signup_info', 'confirm_password', id:'confirm_password', placeholder: " enter password again", :required => true %>
+
+
+  <%= email_field 'signup_info', 'email', placeholder: "email" %>
+
+  <%= telephone_field 'signup_info', 'phone_number', placeholder: "phone number" %>
+
+  <div >
+    <div class="institute">
+      <%= text_field 'signup_info', 'farm_name', placeholder: "institute name", class: "institute" %>
+    </div>
+    <div class="inline">
+      <%= collection_select 'signup_info', 'institute_id', Institute.all, :id, :institute_name,{include_blank: 'Select a Institute'} %>
+    </div>
+  </div>
+
+  <%= submit_tag "submit" %>
+
+  <% end -%>
+</div>
+
+<script type="text/javascript">
+  var password = document.getElementById("password")
+  , confirm_password = document.getElementById("confirm_password");
+
+function validatePassword(){
+  if(password.value != confirm_password.value) {
+    confirm_password.setCustomValidity("Passwords Don't Match");
+  } else {
+    confirm_password.setCustomValidity('');
+  }
+}
+
+password.onchange = validatePassword;
+confirm_password.onkeyup = validatePassword;
+</script>

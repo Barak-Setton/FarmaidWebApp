@@ -1,0 +1,36 @@
+
+<div class="Home">
+  <%= link_to 'home', {:action => 'home', :controller => 'teacher'} %>
+</div>
+<p class="back">
+<%= link_to 'Back', {:action => 'index', :newMessageFrom => @newMessagesFrom} %>
+</p>
+<div class="head"> message </div>
+<div class="head"><%= @student.name %></div>
+
+<div class="form">
+	<%= form_for :response, :url => {:action => "create", :controller => "response", :student_id => @student.id} do |f| %>
+		<%= f.text_area 'response' , size: "40x4"%>
+	  <%= f.submit "send" %>
+	<% end %>
+	<% @all.each do |a| %>
+		<% if a.class.name == "Message"%>
+			<div align="left">
+				
+				<h1 style="background:#dfff80;">
+					<%= @student.name%>
+					<%= simple_format a.message%>
+				</h1>
+			</div>
+		<% end -%>
+		<% if a.class.name == "Response"%>
+			<div align="right">
+				
+				<h2 style="background:#bfff80;">
+					<%= @teacher.name%>
+					<%= simple_format a.response%>
+				</h2>
+			</div>
+		<% end -%>
+	<% end -%>
+</div>

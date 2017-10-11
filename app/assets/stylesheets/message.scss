@@ -1,0 +1,20 @@
+// Place all the styles related to the Message controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.response{
+	float: right;
+	background: blue;
+}
+.message{
+	float: left;
+	background: green;
+}
+.form .message_link a:link {
+    color: #15c12c;
+}
+
+/* visited link */
+.form .message_link a:visited {
+    color: #15c12c;
+}

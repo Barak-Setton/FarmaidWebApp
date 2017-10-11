@@ -1,0 +1,26 @@
+<div class="signup_link">
+   <%= link_to 'Admin Login', {:action => 'index', :controller => 'admin'} %>
+</div>
+<div class="head">FarmAid</div>
+
+<div class="form">
+  <p class="message">
+    <%= @message%>
+  </p>
+  <p></p>
+  <%= form_tag :action => 'check_login' do %>
+    <p>
+      <%= text_field 'login_info', 'name', placeholder: "user name" %>
+    </p>
+
+    <p>
+      <%= password_field 'login_info', 'password', placeholder: "password" %>
+    </p>
+
+    <%= submit_tag "log in" %>
+
+    <div class="signup_link">
+      Not registered? <%= link_to 'signup', {:action => 'signup'} %>
+    </div>
+  <% end -%>
+</div>

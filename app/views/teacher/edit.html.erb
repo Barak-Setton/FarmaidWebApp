@@ -1,0 +1,25 @@
+
+<div class="Home">
+  <%= link_to 'home', {:action => 'home', :controller => 'teacher'} %>
+</div>
+<p class="back">
+<%= link_to 'Back', {:action => 'home'} %>
+</p>
+<div class="head">Edit Profile</div>
+
+
+<div class="form">
+  <%= form_for @teacher, :html => {:multipart => true}, :url => {:action => "update"} do |f| %>
+   <%= image_tag @teacher.image.full.url.to_s %> 
+   <%= f.file_field :image %>
+
+
+  User name: <%= f.text_field 'name'%>
+  Password: <%= f.text_field 'password' %>
+  Email: <%= f.text_field 'email' %>
+  Phone number: <%= f.text_field 'phone_number' %></br>
+
+  <%= f.submit "Save changes" %>
+  <% end %>
+
+</div>

@@ -1,0 +1,17 @@
+<% if @teachers.blank? %>
+<p>No teachers currently in the system.</p>
+<% else %>
+<p>These are the current teachers in our system</p>
+
+<ul id = "teachers">
+  <% @teachers.each do |c| %>
+  <li>
+    <%= link_to c.name, {:action => 'show', :id => c.id} -%>
+    <b> <%= link_to 'Edit', {:action => 'edit', :id => c.id} %> </b>
+    <b> <%= link_to 'Delete', {:action => 'delete', :id => c.id}, :data =>{:confirm => 'are you sure you want to delete this item?'}, :remove => true, :class => 'delete_teacher' %></b>
+  </li>
+  <% end %>
+</ul>
+
+<% end %>
+<p><%= link_to "Add new Teacher", {:action => 'new'}%></p>

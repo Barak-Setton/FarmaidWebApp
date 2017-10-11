@@ -1,0 +1,24 @@
+<div class="Home">
+  <%= link_to 'home', {:action => 'home', :controller => 'teacher'} %>
+</div>
+<p class="back">
+  <%= link_to 'Back', {:action => 'home', :controller => 'teacher'} %>
+</p>
+<div class="head">Messages </div>
+<% unansweredMessageCount = 0 %>
+<% if @students.length != 0 %>
+  <div class="head">Student  </div>
+  <div class="form">
+    <% @students.each do |student| %>
+      <% if @newMessagesFrom != nil && @newMessagesFrom.include?(student)%>
+        <h1>NEW Message from<%= student.name%></h1>
+      <% else %>
+        <div><%= student.name%></div>
+      <% end -%>
+      <div class="message_link">
+        <%= link_to 'message', {:action => 'show',:id => student.id, :newMessagesFrom => @newMessagesFrom} %>
+      </div>
+      
+    <% end %>
+  </div>
+<% end %>

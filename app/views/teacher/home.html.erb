@@ -1,0 +1,12 @@
+<div class="head">Home</div>
+
+<div class="options">
+  <%= link_to image_tag(@current_teacher.image.full.url.to_s), {:action => 'edit'}%>
+  <%= link_to 'Edit profile', {:action => 'edit'}, class: "button" %>
+  <% if @newMessage == true %>
+  	<%= link_to 'messages', {:controller => 'message', :action => 'index', :newMessageFrom => @newMessageFrom}, class: "button",:style=>'background:#f44242;'%>
+  <% else%>
+  	<%= link_to 'messages', {:controller => 'message', :action => 'index', :newMessageFrom => nil}, class: "button"%>
+  <% end %>
+  <%= link_to 'Crops', {:action => 'crops', :id => @current_teacher}, class: "button" %>
+</div>

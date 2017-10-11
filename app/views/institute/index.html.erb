@@ -1,0 +1,14 @@
+<div class="head">Admin Page</div>
+<div class="form">
+	<%=@msg%>
+	<%= button_to 'Add Institute', {:action => 'new'} %>
+</div>
+
+<div class="form">
+	<% @institutes.each do |institute|%>
+		<p>
+		<%=institute.institute_name%>
+		<%= link_to 'Remove', {:action => 'destroy', :id => institute.id}, data: { confirm: 'Are you sure you want to delete farm ' +institute.institute_name + '?'  }, class: "button_crop" %>
+		</p>
+	<%end -%>
+</div>

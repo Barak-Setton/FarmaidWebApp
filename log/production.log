@@ -1,0 +1,28 @@
+D, [2017-08-05T22:29:40.955451 #24752] DEBUG -- :   [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+D, [2017-08-05T22:29:40.956481 #24752] DEBUG -- :   [1m[35m (0.2ms)[0m  [1m[35mCREATE DATABASE `farmaid_production` DEFAULT CHARACTER SET `utf8`[0m
+D, [2017-08-05T22:29:41.004480 #24752] DEBUG -- :   [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+D, [2017-08-05T22:29:41.299156 #24752] DEBUG -- :   [1m[35m (293.6ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY) ENGINE=InnoDB[0m
+D, [2017-08-05T22:29:41.306731 #24752] DEBUG -- :   [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+D, [2017-08-05T22:29:41.343819 #24752] DEBUG -- :   [1m[35m (36.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20170805201456)[0m
+D, [2017-08-05T22:29:41.377224 #24752] DEBUG -- :   [1m[35m (33.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES
+(20170805201448),
+(20170805201444);
+
+[0m
+D, [2017-08-05T22:29:41.691316 #24752] DEBUG -- :   [1m[35m (310.5ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+D, [2017-08-05T22:29:41.693184 #24752] DEBUG -- :   [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+D, [2017-08-05T22:29:41.696387 #24752] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+D, [2017-08-05T22:29:41.697484 #24752] DEBUG -- :   [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'production', '2017-08-05 20:29:41', '2017-08-05 20:29:41')[0m
+D, [2017-08-05T22:29:41.736087 #24752] DEBUG -- :   [1m[35m (38.3ms)[0m  [1m[35mCOMMIT[0m
+D, [2017-08-05T22:29:41.737386 #24752] DEBUG -- :   [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+D, [2017-08-05T22:29:41.738437 #24752] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+D, [2017-08-05T22:29:41.739194 #24752] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+D, [2017-08-05T22:29:41.740422 #24752] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+D, [2017-08-05T22:29:41.741859 #24752] DEBUG -- :   [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+D, [2017-08-05T22:32:26.385992 #24917] DEBUG -- :   [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+D, [2017-08-05T22:32:26.389451 #24917] DEBUG -- :   [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK(8435291379742112130, 0)[0m
+D, [2017-08-05T22:32:26.395259 #24917] DEBUG -- :   [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+D, [2017-08-05T22:32:26.397160 #24917] DEBUG -- :   [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+D, [2017-08-05T22:32:26.400264 #24917] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+D, [2017-08-05T22:32:26.401056 #24917] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+D, [2017-08-05T22:32:26.401348 #24917] DEBUG -- :   [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK(8435291379742112130)[0m

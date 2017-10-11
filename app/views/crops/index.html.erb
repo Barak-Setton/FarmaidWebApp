@@ -1,0 +1,31 @@
+<div class="Home">
+  <%= link_to 'home', {:action => 'home', :controller => 'teacher'} %>
+</div>
+<p class="back"><%= link_to 'Back', {:controller => 'teacher', :action => 'home'} %>
+</p>
+<p id="notice"><%= notice %></p>
+
+<p class="head">Crops</p>
+
+<div class="form">
+  <%= link_to 'New Crop', {:action => 'new'}, class: "button"%>
+  <table>
+    <tbody>
+      <% @crops.each do |crop| %>
+        <tr>
+          <td class="crop">
+            <h2><%= crop[:name] %> <h2>
+          </td>
+          <td class="crop"><%= image_tag crop.image.thumbnail.url.to_s %> </td>
+          <td class="crop">
+            <%= link_to 'Edit', {:action => 'edit', :id => crop}, class: "button_crop" %>
+            <%= link_to 'Show', {:action => 'show', :id => crop}, class: "button_crop" %>
+            <%= link_to 'Remove', {:action => 'delete', :id => crop}, data: { confirm: 'Are you sure you want to delete crop:  ' +crop[:name] + '?'}, class: "button_crop" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+

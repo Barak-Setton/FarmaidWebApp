@@ -1,0 +1,8 @@
+<h1><%= @teacher.name %></h1>
+
+<p>
+  <strong>password: </strong><%= @teacher.password %></br>
+  <strong>email: </strong><%= @teacher.email %></br>
+  <strong>phone number: </strong><%= @teacher.phone_number %></br>
+</p>
+<p><% link_to 'Back', {:action => 'list'}%></p>

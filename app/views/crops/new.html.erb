@@ -1,0 +1,13 @@
+<div class="Home">
+  <%= link_to 'home', {:action => 'home', :controller => 'teacher'} %>
+</div>
+<p class="Back">
+	<%= link_to 'Back', {:action => 'index'} %>
+</p>
+<div class="head">Crop</div>
+
+<div class="form">
+  <%= @msg %>
+  <%= render 'form_new' %>
+</div>
+

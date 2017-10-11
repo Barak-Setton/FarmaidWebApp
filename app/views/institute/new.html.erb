@@ -1,0 +1,22 @@
+<p class="Back">
+	<%= link_to 'Back', {:action => 'index'} %>
+</p>
+<div class="head">Add Institute</div>
+
+<div class="form">
+	<%= form_for @institute , :url => {:action => "create", :id =>@institute} do |f| %>
+	  <% if @institute.errors.any? %>
+	    <div id="erro_explanation">
+	      <h2><%= pluralize(@institute.errors.count, "error") %> Prohibited this institute from being saved: </h2>
+	      <ul>
+	        <% @institute.errors.full_messages.each do |msg| %>
+	        <li> <%= msg %></li>
+	        <% end %>
+	      </ul>
+	    </div>
+	  <% end %>
+	  <p>Institute name: <%= f.text_field 'institute_name' %></p>
+	  <p>Teacher ID: <%= f.text_field 'teacher_admin_id' %></p>
+	  <%= f.submit "add" %>
+	<% end %>
+</div>

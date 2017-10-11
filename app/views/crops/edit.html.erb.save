@@ -1,0 +1,35 @@
+<div class="Home">
+  <%= link_to 'home', {:action => 'home', :controller => 'teacher'} %>
+</div>
+<p class="back"><%= link_to 'Back', {:action => 'index'} %></p>
+<p class="head">Edit Crop</p>
+
+<div class="form">
+  <%= render 'form_edit', :id => @crop%>
+</div>
+
+<div class="form">
+q  <%= render 'tutorial/edit'%>
+</div>
+
+<div class="tut_form">
+  <p>
+    <%= button_tag 'New Tutorial', type: 'button', onclick: 'add_Tutorial()', class: 'button' %>
+  </p>
+</div>
+
+
+
+<script type="text/javascript">
+  var tutCount = 0;
+  function add_Tutorial(){
+    tutCount += 1;
+
+    $(".tut_form").prepend('<div class=tut_'+tutCount+'><div class="form"><p><h1>New Tutorial #'+tutCount+':</h1><%= escape_javascript(render :partial => "form_tut", :id => @crop) %></p><button type="button" onclick="remove_Tutorial('+tutCount+')">remove</button></div></div>');
+  }
+
+  function remove_Tutorial(value){
+    $('.tut_'+value).remove();
+    console.log("removed: " + value);
+  }
+</script>

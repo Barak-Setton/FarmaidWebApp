@@ -1,0 +1,7 @@
+I"v(function() {
+  window.test = function() {
+    return alert('The time is <%= Time.new %>');
+  };
+
+}).call(this);
+:ET

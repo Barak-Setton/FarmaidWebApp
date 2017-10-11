@@ -1,0 +1,23 @@
+<div class="signup_link">
+   <%= link_to 'Teacher Login', {:action => 'login', :controller => 'login'} %>
+</div>
+<div class="head">Admin Login</div>
+
+<div class="form">
+  <p class="message">
+    <%= @message%>
+  </p>
+  <p></p>
+  <%= form_tag :action => 'check_login' do %>
+    <p>
+      <%= text_field 'login_info', 'name', placeholder: "user name" %>
+    </p>
+
+    <p>
+      <%= password_field 'login_info', 'password', placeholder: "password" %>
+    </p>
+
+    <%= submit_tag "log in" %>
+
+  <% end -%>
+</div>

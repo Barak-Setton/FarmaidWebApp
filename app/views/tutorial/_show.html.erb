@@ -1,0 +1,21 @@
+<% tuts = @crop.tutorials %>
+<% index = 0 %>
+<% tuts.each do |tutorial| %>
+  <% images = tutorial.images %>
+  <% index += 1 %>
+  <p>
+    <h1>
+      Tutorial #<%= index %> : 
+    </h1>
+    <h2>
+      <%= tutorial[:tutorial_type]%>
+    </h2>
+    <% images = images.sort_by {|img| img.image_order} %>
+    <% images.each do |image| %>
+      <%= image_tag image.name.thumbnail.url.to_s %>
+      <%= image.description %>
+    <% end %>
+  </p>
+<% end %>
+
+

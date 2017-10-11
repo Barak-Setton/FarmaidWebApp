@@ -1,0 +1,22 @@
+<h1>Add new book</h1>
+
+<%= link_to 'Back', {:action => 'list'} %>
+
+<!-- <form action = "/teacher/create" method = "post"> -->
+<%= form_tag :action => 'create' do %>
+<p><label for = "teacher_name">user name</label>:
+<%= text_field 'teachers', 'name' %></p>
+
+<p><label for = "teacher_password">password</label>:
+<%= text_field 'teachers', 'password' %></p>
+
+
+<p><label for = "teacher_email">Email</label>:
+<%= text_field 'teachers', 'email' %></p>
+
+<p><label for = "teacher_phone_number">phone number</label><br/>
+<%= text_field 'teachers', 'phone_number' %></p>
+
+<%= submit_tag "add" %>
+
+<% end -%>

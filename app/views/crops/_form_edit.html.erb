@@ -1,0 +1,19 @@
+<%= form_for @crop , :html => {:multipart => true}, :url => {:action => "update", :id =>@crop} do |f| %>
+  <% if @crop.errors.any? %>
+    <div id="erro_explanation">
+      <h2><%= pluralize(@crop.errors.count, "error") %> Prohibited this crop from being saved: </h2>
+      <ul>
+        <% @crop.errors.full_messages.each do |msg| %>
+        <li> <%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <p><%= image_tag @crop.image.full.url.to_s %> <%= f.file_field 'image' %></p>
+  <p>crop name: <%= f.text_field 'name' %></p>
+  <p>crop description: <%= f.text_area 'description' %></p>
+  <%= f.submit "Save changes" %>
+
+  
+<% end %>

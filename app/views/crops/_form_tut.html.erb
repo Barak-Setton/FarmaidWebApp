@@ -1,0 +1,31 @@
+<%= form_for :tutorial, :url => {:action => "add_tutorial"} do |f| %>
+  <p>
+    <h3>Tutorial Type:</h3>
+    <%= f.select "tutorial_type",  Tutorial::TUTORIAL_TYPES%>
+     OR Other
+    <%= f.text_field  'type_name', :placeholder => "Tutorial name (if other)"%>
+    <%= f.hidden_field :crop_id, :value => params[:id] %>
+  </p>
+  <div id="items">
+    <% (1..10).each do |item| %>
+      <%= content_tag :div, :class => "item_"+item.to_s, style: "display:none;" do %>
+        Step <%= item%>
+        <%= f.file_field 'image_'+item.to_s %>   
+        <%= f.text_area 'text_'+item.to_s%>
+      <% end %>
+    <% end %>
+  </div>
+  <p>
+    <%= button_tag 'New Step', type: 'button', onclick: 'add_Image()', class: 'btn btn-default' %>
+  </p>
+
+  <%= f.submit "Add tutorial" %>
+<% end %>
+
+<script type="text/javascript">
+  var imageCount = 0;
+  function add_Image(){
+    imageCount += 1;
+    $('.item_'+imageCount).show();
+  }
+</script>

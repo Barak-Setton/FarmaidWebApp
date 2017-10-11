@@ -1,0 +1,60 @@
+// Place all the styles related to the Crop controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.inline{
+  display:inline;
+}
+
+.left{
+  float: left;
+}
+
+.tut_form{  
+  position: relative;
+  z-index: 1;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  text-align: center;
+}
+
+
+.crops{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 200px;
+  height: 100px;
+  margin: auto;
+  align: center;
+}
+
+.crop{
+  background: #99ff99;
+  margin: 15px;
+  padding: 15px;
+}
+
+.button_crop{
+  display: inline-block;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #4CAF50;
+  width: 100px;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  color: #000000;
+  font-size: 14px;
+  cursor: pointer;
+}
+.crop a:hover,.form a:active,.form a:focus {
+  background: #29a329;
+}
+.button:hover{
+  background: #29a329;
+}
+
